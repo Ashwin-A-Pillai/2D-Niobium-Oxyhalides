@@ -1,0 +1,62 @@
+&control
+    calculation = 'scf'
+    prefix = 'NbOBr2'
+    pseudo_dir = '/home/pillai/my_codes/yambo/NbOX2/PS'
+    outdir = './outs'
+    verbosity = 'high'
+    wf_collect = .true.
+    tprnfor = .true.
+    tstress = .true.
+/
+
+&system
+    ibrav = 8
+    A = 7.071127061
+    B = 3.928511538
+    C = 25.000000000
+
+    nat = 8
+    ntyp = 3
+
+    ecutwfc = 80
+    nbnd = 110
+
+    input_dft = 'PBE'
+
+    occupations = 'smearing'
+    smearing = 'mv'
+    degauss = 0.005
+
+    assume_isolated = '2D'
+/
+
+&electrons
+    mixing_mode = 'local-TF'
+    mixing_beta = 0.08
+    mixing_ndim = 12
+    conv_thr = 1.0d-10
+    electron_maxstep = 300
+    diagonalization = 'david'
+    diago_david_ndim = 4
+/
+
+ATOMIC_SPECIES
+    Nb  92.90638   Nb_ONCV_PBE-1.2.upf
+    O   15.99940   O_ONCV_PBE-1.2.upf
+    Br  79.90400   Br_ONCV_PBE-1.2.upf
+
+ATOMIC_POSITIONS crystal
+Nb  0.2852227726  0.0695740937  0.4999998649
+Nb  0.7147772274  0.0695740937  0.5000001351
+
+O   0.2800787169  0.5302635935  0.4999976425
+O   0.7199212831  0.5302635935  0.5000023575
+
+Br  0.0000018074  0.0193809164  0.5711608996
+Br  0.9999981926  0.0193809164  0.4288391004
+
+Br  0.4999973682  0.0271813963  0.5842976879
+Br  0.5000026318  0.0271813963  0.4157023121
+
+K_POINTS automatic
+    14 28 1 0 0 0
