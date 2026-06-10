@@ -18,8 +18,8 @@
     nat = 8
     ntyp = 3
 
-    ecutwfc = 80
-    nbnd = 110
+    ecutwfc = 100
+    nbnd = 120
 
     input_dft = 'PBE'
 
